@@ -102,8 +102,8 @@ def conv(input_tensor, scope, *, n_filters, filter_size, stride,
     :param input_tensor: (TensorFlow Tensor) The input tensor for the convolution
     :param scope: (str) The TensorFlow variable scope
     :param n_filters: (int) The number of filters
-    :param filter_size: either (int) or a list or tuple [int, int]. The filter size for the squared matrix,
-    or the height and width of filter if the input is a list
+    :param filter_size:  (Union[int, [int], tuple<int, int>]) The filter size for the squared kernel matrix,
+    or the height and width of kernel filter if the input is a list or tuple
     :param stride: (int) The stride of the convolution
     :param pad: (str) The padding type ('VALID' or 'SAME')
     :param init_scale: (int) The initialization scale
@@ -112,7 +112,7 @@ def conv(input_tensor, scope, *, n_filters, filter_size, stride,
     :return: (TensorFlow Tensor) 2d convolutional layer
     """
     if isinstance(filter_size, list) or isinstance(filter_size, tuple):
-        assert len(filter_size) == 2, "Filter size needs to have 2 elements, both height and width!"
+        assert len(filter_size) == 2, "Filter size must have 2 elements (height, width), {} were given".format(len(filter_size))
         filter_height = filter_size[0]
         filter_width = filter_size[1]
     else:
