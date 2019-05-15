@@ -112,7 +112,8 @@ def conv(input_tensor, scope, *, n_filters, filter_size, stride,
     :return: (TensorFlow Tensor) 2d convolutional layer
     """
     if isinstance(filter_size, list) or isinstance(filter_size, tuple):
-        assert len(filter_size) == 2, "Filter size must have 2 elements (height, width), {} were given".format(len(filter_size))
+        assert len(filter_size) == 2, \
+            "Filter size must have 2 elements (height, width), {} were given".format(len(filter_size))
         filter_height = filter_size[0]
         filter_width = filter_size[1]
     else:

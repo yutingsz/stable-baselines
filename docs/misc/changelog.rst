@@ -11,7 +11,7 @@ Release 2.5.2a0 (WIP)
 - Bugfix for ``VecEnvWrapper.__getattr__`` which enables access to class attributes inherited from parent classes.
 - Removed ``get_available_gpus`` function which hadn't been used anywhere (@Pastafarianist)
 - Fixed path splitting in ``TensorboardWriter._get_latest_run_id()`` on Windows machines (@PatrickWalter214)
-- The parameter "filter_size" of the function "conv" can have two formats: one integer or a list/tuple of two integer (Height and Width). Then user can supply a non-squared filter.
+- The parameter ``filter_size`` of the function ``conv`` can have two formats: one integer or a list/tuple of two integer (Height and Width). Then user can supply a non-squared filter.
 
 Release 2.5.1 (2019-05-04)
 --------------------------
