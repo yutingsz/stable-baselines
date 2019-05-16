@@ -2,7 +2,6 @@ import pytest
 import tensorflow as tf
 import numpy as np
 from stable_baselines.a2c.utils import conv
-from stable_baselines.common import tf_util
 from stable_baselines.common.cmd_util import make_atari_env
 from stable_baselines.common.vec_env import VecFrameStack
 from stable_baselines.common.input import observation_input
