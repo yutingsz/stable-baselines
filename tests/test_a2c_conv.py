@@ -32,7 +32,6 @@ def test_conv_kernel(input1, input2):
 
     graph = tf.Graph()
     with graph.as_default():
-        sess = tf_util.make_session(graph=graph)
         _, scaled_images = observation_input(ob_space, n_batch, scale=scale)
         activ = tf.nn.relu
         layer_1 = activ(conv(scaled_images, 'c1', n_filters=32, filter_size=input1, stride=4
